@@ -147,6 +147,7 @@ main .images .button {
 /* Laptop Styles */
 @media screen and (min-width: 1000px) {
   .grid {
+    grid-template-columns: repeat(12, 1fr);
     grid-template-rows: auto 250px;
   }
 
