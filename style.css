@@ -1,5 +1,175 @@
-/* Resets */
 /* Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap");
+
+@font-face {
+  font-family: "Ketsiyo";
+  src: url(./assets/fonts/Ketsiyo.otf);
+}
+
+/* Resets */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
 /* Variables */
+:root {
+  --primary: #ffffff;
+  --seconadry: #0c1519;
+}
+
 /* Base Styles */
+body {
+  background-image: url(./assets/images/Bg.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: var(--seconadry);
+  color: var(--primary);
+  min-height: 100vh;
+}
+
+a {
+  color: var(--primary);
+}
+
+img {
+  max-width: 100%;
+}
+
+header,
+footer {
+  padding: 3.5rem;
+}
+
+header {
+  display: flex;
+  align-items: center;
+}
+
+header .logo h1,
+ul li {
+  font-family: "Syne";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 100%;
+  letter-spacing: -0.02em;
+}
+
+header ul li {
+  font-size: 0.875rem;
+  opacity: 0.56;
+}
+
+header ul li:nth-child(1) {
+  opacity: 1;
+}
+
+main .title p {
+  font-family: "Ketsiyo";
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%;
+  text-align: center;
+  letter-spacing: -0.02em;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+footer a {
+  font-family: "Syne";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.875rem;
+  line-height: 100%;
+  letter-spacing: -0.02em;
+}
+
 /* Mobile Styles */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+header {
+  justify-content: center;
+}
+
+main > * {
+  grid-column: 1 / -1;
+  justify-self: center;
+}
+
+main .title {
+  z-index: 1;
+}
+
+main .title p {
+  font-size: 3.75rem;
+}
+
+header ul,
+main .images .button {
+  display: none;
+}
+
+/* Tablet Styles */
+@media screen and (min-width: 768px) {
+  header {
+    justify-content: space-between;
+  }
+
+  header ul {
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+  }
+
+  main .title p {
+    font-size: 5.75rem;
+  }
+}
+
+/* Laptop Styles */
+@media screen and (min-width: 1000px) {
+  .grid {
+    grid-template-rows: auto 250px;
+  }
+
+  main .title p {
+    font-size: 7.75rem;
+  }
+
+  main .title {
+    grid-row: 1;
+  }
+
+  main .images {
+    grid-row: 1 / span 2;
+    align-self: end;
+
+    position: relative;
+  }
+
+  main .images .button {
+    display: block;
+
+    position: absolute;
+    bottom: 5rem;
+    right: -1rem;
+  }
+}
